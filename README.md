@@ -21,10 +21,10 @@ Can be installed with ```pip install -r requirements.txt```.
 
 ## Downloading the dataset
 
-The dataset (in ```.opus``` format) is already contained in the ```mls_dutch_opus``` and ```mls_polish_opus``` directories. If you wish to download the dataset from the original source, it can be found [here](https://www.openslr.org/94/).
+The datasets can be downloaded from [here](https://www.openslr.org/94/). We use the ```mls_polish_opus.tar.gz``` and ```mls_dutch_opus.tar.gz``` datasets.
 
 ## Pre-processing
-Speaker metadata and gender labels can be found in the ```json``` folder. If required, they can be generated again using the ```generate_json.py``` file.
+Speaker metadata and gender labels can be found in the ```json``` folder. If required, they can be generated again using the ```generate_json.py``` file from the metadata files associated with the MLS datasets.
 
 ## Training GenderNet classifier
 Training the model is done in ```GenderNet.py```. Arguments are listed inside the file. Ensure you update the config inside ```GenderNet.py``` for Dutch/Polish datasets.
@@ -34,4 +34,4 @@ Instructions on how to run the pre-trained GenGAN model on the audio files can b
 To transform speech with GenGAN, run ```GenGAN.py``` with the correct audio paths inside the argument parser. Make sure you have ```.opus``` audio in the input directory and that the GenGAN models (```multi_speaker.pt, netG_epoch_25.pt```) are in the correct ```--path_to_models``` folder.
 
 ## Evaluation
-To assess GenGAN’s privacy protection, run ```InferenceGenderNet.py```on the **transformed audio**. Update the config for Polish/Dutch ```audio_list``` and the appropriate model checkpoints.
+To assess GenGAN’s privacy protection, run ```InferenceGenderNet.py```on the **transformed audio**. Update the config for Polish/Dutch ```audio_list``` and the appropriate model checkpoints. 
